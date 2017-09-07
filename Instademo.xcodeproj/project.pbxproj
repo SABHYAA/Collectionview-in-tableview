@@ -7,14 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C2A051A1F615DD900FF04C6 /* Selectedlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2A05191F615DD900FF04C6 /* Selectedlist.swift */; };
 		0C4C5ECA1F5FF5C5003509CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4C5EC91F5FF5C5003509CE /* AppDelegate.swift */; };
 		0C4C5ECF1F5FF5C5003509CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C4C5ECD1F5FF5C5003509CE /* Main.storyboard */; };
 		0C4C5ED11F5FF5C5003509CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C4C5ED01F5FF5C5003509CE /* Assets.xcassets */; };
 		0C4C5ED41F5FF5C5003509CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C4C5ED21F5FF5C5003509CE /* LaunchScreen.storyboard */; };
 		0C4C5EDC1F5FF630003509CE /* Insta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4C5EDB1F5FF630003509CE /* Insta.swift */; };
+		0CF09A371F616A7C006379FE /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF09A351F616A7C006379FE /* PhotoCell.swift */; };
+		0CF09A381F616A7C006379FE /* PhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CF09A361F616A7C006379FE /* PhotoCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C2A05191F615DD900FF04C6 /* Selectedlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Selectedlist.swift; sourceTree = "<group>"; };
 		0C4C5EC61F5FF5C5003509CE /* Instademo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instademo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C4C5EC91F5FF5C5003509CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C4C5ECE1F5FF5C5003509CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -22,6 +26,8 @@
 		0C4C5ED31F5FF5C5003509CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C4C5ED51F5FF5C5003509CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C4C5EDB1F5FF630003509CE /* Insta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Insta.swift; sourceTree = "<group>"; };
+		0CF09A351F616A7C006379FE /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		0CF09A361F616A7C006379FE /* PhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +61,10 @@
 			isa = PBXGroup;
 			children = (
 				0C4C5EC91F5FF5C5003509CE /* AppDelegate.swift */,
+				0C2A05191F615DD900FF04C6 /* Selectedlist.swift */,
 				0C4C5EDB1F5FF630003509CE /* Insta.swift */,
+				0CF09A351F616A7C006379FE /* PhotoCell.swift */,
+				0CF09A361F616A7C006379FE /* PhotoCell.xib */,
 				0C4C5ECD1F5FF5C5003509CE /* Main.storyboard */,
 				0C4C5ED01F5FF5C5003509CE /* Assets.xcassets */,
 				0C4C5ED21F5FF5C5003509CE /* LaunchScreen.storyboard */,
@@ -123,6 +132,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CF09A381F616A7C006379FE /* PhotoCell.xib in Resources */,
 				0C4C5ED41F5FF5C5003509CE /* LaunchScreen.storyboard in Resources */,
 				0C4C5ED11F5FF5C5003509CE /* Assets.xcassets in Resources */,
 				0C4C5ECF1F5FF5C5003509CE /* Main.storyboard in Resources */,
@@ -136,6 +146,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CF09A371F616A7C006379FE /* PhotoCell.swift in Sources */,
+				0C2A051A1F615DD900FF04C6 /* Selectedlist.swift in Sources */,
 				0C4C5ECA1F5FF5C5003509CE /* AppDelegate.swift in Sources */,
 				0C4C5EDC1F5FF630003509CE /* Insta.swift in Sources */,
 			);
