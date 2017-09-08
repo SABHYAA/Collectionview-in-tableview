@@ -73,7 +73,7 @@
                                 </cells>
                             </collectionView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9T9-o1-z7w">
-                                <rect key="frame" x="0.0" y="244" width="414" height="492"/>
+                                <rect key="frame" x="0.0" y="315" width="414" height="421"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Customcell" rowHeight="227" id="WsZ-mZ-1Mb" customClass="Customcell" customModule="Instademo" customModuleProvider="target">
@@ -84,13 +84,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o1f-ns-zfB">
-                                                    <rect key="frame" x="8" y="10.666666666666664" width="206" height="21"/>
+                                                    <rect key="frame" x="8" y="11" width="206" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="V4l-AC-7ud">
-                                                    <rect key="frame" x="14" y="39.666666666666671" width="386" height="147.33333333333331"/>
+                                                    <rect key="frame" x="14" y="40" width="386" height="147"/>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cBx-oG-BzS">
                                                     <rect key="frame" x="350" y="137" width="40" height="40"/>
@@ -124,15 +124,26 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zDe-CM-WuA">
+                                <rect key="frame" x="20" y="259" width="374" height="41"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="favouritesButton:" destination="RVj-Nv-8Ut" eventType="touchUpInside" id="Wcn-ot-FEY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="9T9-o1-z7w" secondAttribute="trailing" id="9OT-ZE-xJN"/>
+                            <constraint firstItem="9T9-o1-z7w" firstAttribute="top" secondItem="zDe-CM-WuA" secondAttribute="bottom" constant="15" id="ATF-pB-0kr"/>
                             <constraint firstItem="qZF-YO-dCj" firstAttribute="top" secondItem="9T9-o1-z7w" secondAttribute="bottom" id="BDk-Su-ZvT"/>
+                            <constraint firstItem="zDe-CM-WuA" firstAttribute="top" secondItem="ogD-jp-Pal" secondAttribute="bottom" constant="15" id="Cjo-ej-lE1"/>
                             <constraint firstItem="9T9-o1-z7w" firstAttribute="leading" secondItem="6sb-vH-Dgb" secondAttribute="leading" id="FBM-sX-K2O"/>
-                            <constraint firstItem="9T9-o1-z7w" firstAttribute="top" secondItem="ogD-jp-Pal" secondAttribute="bottom" id="Kt1-fe-Fys"/>
+                            <constraint firstItem="zDe-CM-WuA" firstAttribute="leading" secondItem="6sb-vH-Dgb" secondAttribute="leading" constant="20" id="Ij5-Vj-e0c"/>
+                            <constraint firstItem="9T9-o1-z7w" firstAttribute="top" secondItem="ogD-jp-Pal" secondAttribute="bottom" constant="71" id="Kt1-fe-Fys"/>
                             <constraint firstItem="ogD-jp-Pal" firstAttribute="top" secondItem="Ppd-H6-53z" secondAttribute="bottom" id="dyO-cO-tlq"/>
                             <constraint firstAttribute="trailing" secondItem="ogD-jp-Pal" secondAttribute="trailing" id="sRq-sf-JTX"/>
+                            <constraint firstAttribute="trailing" secondItem="zDe-CM-WuA" secondAttribute="trailing" constant="20" id="shv-KF-coR"/>
                             <constraint firstItem="ogD-jp-Pal" firstAttribute="leading" secondItem="6sb-vH-Dgb" secondAttribute="leading" id="zNZ-KH-RrG"/>
                         </constraints>
                     </view>

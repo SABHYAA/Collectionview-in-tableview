@@ -11,8 +11,8 @@ import UIKit
 class Selectedlist: UIViewController {
 
     @IBOutlet weak var selectedTableView: UITableView!
-    var images = ["conjuring", "oranges", "The Avengers", "The incredibles"]
-    var imageNames = ["conjuring", "oranges", "The Avengers", "The incredibles"]
+    var images = [String]()
+    var imageNames = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +44,6 @@ extension Selectedlist: UITableViewDataSource, UITableViewDelegate {
                 }
         cell.imageNamesLabel?.text = imageNames[indexPath.row]
         cell.imagesUIimageView.image = UIImage(named: imageNames[indexPath.row])
-        cell.tapButton.addTarget(self, action: #selector(tapButtonTapped(_:)), for: .touchUpInside)
         return cell
         
     }

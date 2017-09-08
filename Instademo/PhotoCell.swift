@@ -15,7 +15,7 @@ class PhotoCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-    @IBOutlet weak var tapButton: UIButton!
+    
     @IBOutlet weak var imagesUIimageView: UIImageView!
     
     
