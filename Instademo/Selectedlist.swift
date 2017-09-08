@@ -11,6 +11,7 @@ import UIKit
 class Selectedlist: UIViewController {
 
     @IBOutlet weak var selectedTableView: UITableView!
+    
     var images = [String]()
     var imageNames = [String]()
     
@@ -34,7 +35,7 @@ class Selectedlist: UIViewController {
 }
 extension Selectedlist: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return images.count
+        return imageNames.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -48,11 +49,12 @@ extension Selectedlist: UITableViewDataSource, UITableViewDelegate {
         
     }
     
-    @objc func tapButtonTapped(_ sender: UIButton) {
-        //sender.isSelected = !sender.isSelected
-        self.navigationController?.popViewController(animated: true)
-    }
+//    @objc func tapButtonTapped(_ sender: UIButton) {
+//        //sender.isSelected = !sender.isSelected
+//        self.navigationController?.popViewController(animated: true)
+//    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
-    }
+        return 100
+        
+        }
 }

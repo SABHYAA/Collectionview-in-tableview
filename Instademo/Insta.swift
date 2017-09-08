@@ -11,33 +11,34 @@ import UIKit
 class Insta: UIViewController {
 
     @IBOutlet var instaTableView: UITableView!
-    
     @IBOutlet var instaCollectiew: UICollectionView!
+    
     @IBAction func tapButton(_ sender: UIButton) {
         var cellview = sender.superview
         while !(cellview is UITableViewCell) {
             cellview = cellview!.superview
             
         }
-      let cell = cellview as! UITableViewCell
-    let indexPath = self.instaTableView.indexPath(for: cell)
-      if self.selectedIndexpath.contains(indexPath!){
-        self.selectedIndexpath.remove(at: (indexPath?.row)!)
-     }else
-      {
-          self.selectedIndexpath.append(indexPath!)
-       }
+        let cell = cellview as! UITableViewCell
+        let indexPath = self.instaTableView.indexPath(for: cell)
         
+        if self.selectedIndexpath.contains(indexPath!){
+            self.selectedIndexpath.remove(at: (indexPath?.row)!)
+        }else
+        {
+            self.selectedIndexpath.append(indexPath!)
+        }
         
         self.instaTableView.reloadData()
+        
         UIView.animate(withDuration: 2.0, delay: 0.0, usingSpringWithDamping: 2.0, initialSpringVelocity: 1.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
+//            CGAffineTransform?
             sender.alpha = 0
         }) { (true) in
             sender.alpha = 1
         }
 
     }
-    
     
     @IBAction func favouritesButton(_ sender: UIButton) {
         let obj = self.storyboard?.instantiateViewController(withIdentifier: "SelectedlistId") as? Selectedlist
@@ -47,28 +48,25 @@ class Insta: UIViewController {
     }
     
      //Variable Declarations**************************************************************************************
-    var images = ["conjuring", "oranges", "The avengers", "The incredibles"]
+//    var images = ["conjuring", "oranges", "The avengers", "The incredibles"]
     var imagesNames = ["conjuring", "oranges", "The avengers", "The incredibles"]
-    var name = [""]
-    var img = [""]
-    var selectedImages = [String]()
-    var selectedimageNames = [String]()
- var selectedIndexpath = [IndexPath]()
+    var name = [String]()
+    var img = [String]()
+    var selectedIndexpath = [IndexPath]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    self.instaTableView.dataSource = self
-    self.instaTableView.delegate = self
-    self.instaCollectiew.dataSource = self
-    self.instaCollectiew.delegate = self
+        
+        self.instaTableView.dataSource = self
+        self.instaTableView.delegate = self
+        self.instaCollectiew.dataSource = self
+        self.instaCollectiew.delegate = self
     }}
 
-// Lifecycle of Tableview*****************************************************************************************
+//Tableview delegates and datasource*************************************************
 extension Insta: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return images.count
+        return imagesNames.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -87,18 +85,18 @@ extension Insta: UITableViewDataSource, UITableViewDelegate {
         }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        return 150
     }
 
 func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     if self.selectedIndexpath.contains(indexPath){
         for temp in 0..<name.count{
-            if name[temp] == imagesNames[indexPath.row]{
+            if name[temp] == imagesNames[indexPath.row] {
                 name.remove(at: temp)
             }
         }
         for temp in 0..<img.count{
-            if img[temp] == images[indexPath.row]{
+            if img[temp] == imagesNames[indexPath.row]{
                 img.remove(at: temp)
             }
         }
@@ -106,17 +104,17 @@ func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
     else{
-        img.append(images[indexPath.row])
+        img.append(imagesNames[indexPath.row])
         name.append(imagesNames[indexPath.row])
         self.selectedIndexpath.append(indexPath)
     }
     self.instaTableView.reloadData()
 }
 }
-// Lifecycle of CollectionView************************************************************************************
+//CollectionView delegates and data source *****************************************
 extension Insta: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return images.count
+        return imagesNames.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard  let cell = instaCollectiew.dequeueReusableCell(withReuseIdentifier: "Gallerycells", for: indexPath) as? Gallerycells
@@ -125,7 +123,7 @@ extension Insta: UICollectionViewDelegate, UICollectionViewDataSource, UICollect
         }
         cell.name2Label.text = imagesNames[indexPath.row]
         
-        cell.pictures2UIImageView.image = UIImage(named: images[indexPath.row])
+        cell.pictures2UIImageView.image = UIImage(named: imagesNames[indexPath.row])
         return cell
         }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
