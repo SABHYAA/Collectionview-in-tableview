@@ -10,49 +10,22 @@ import UIKit
 
 class Insta: UIViewController {
 
+    //Variable Declarations**************************************************************************************
+    var imagesNames = ["conjuring", "oranges", "The avengers", "The incredibles"]
+    var img = [String]()
+    
     @IBOutlet var instaTableView: UITableView!
     @IBOutlet var instaCollectiew: UICollectionView!
     
     @IBAction func tapButton(_ sender: UIButton) {
-        var cellview = sender.superview
-        while !(cellview is UITableViewCell) {
-            cellview = cellview!.superview
-            
-        }
-        let cell = cellview as! UITableViewCell
-        let indexPath = self.instaTableView.indexPath(for: cell)
-        
-        if self.selectedIndexpath.contains(indexPath!){
-            self.selectedIndexpath.remove(at: (indexPath?.row)!)
-        }else
-        {
-            self.selectedIndexpath.append(indexPath!)
-        }
-        
-        self.instaTableView.reloadData()
-        
-        UIView.animate(withDuration: 2.0, delay: 0.0, usingSpringWithDamping: 2.0, initialSpringVelocity: 1.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
-//            CGAffineTransform?
-            sender.alpha = 0
-        }) { (true) in
-            sender.alpha = 1
-        }
-
     }
     
     @IBAction func favouritesButton(_ sender: UIButton) {
         let obj = self.storyboard?.instantiateViewController(withIdentifier: "SelectedlistId") as? Selectedlist
-        obj?.imageNames = name
-        obj?.images = img
+        obj?.imageNames = self.img
         self.navigationController?.pushViewController(obj!, animated: true)
     }
-    
-     //Variable Declarations**************************************************************************************
-//    var images = ["conjuring", "oranges", "The avengers", "The incredibles"]
-    var imagesNames = ["conjuring", "oranges", "The avengers", "The incredibles"]
-    var name = [String]()
-    var img = [String]()
-    var selectedIndexpath = [IndexPath]()
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,7 +49,7 @@ extension Insta: UITableViewDataSource, UITableViewDelegate {
         }
         cell.nameLabel.text = imagesNames[indexPath.row]
         cell.picturesUIImageView.image = UIImage(named: imagesNames[indexPath.row])
-        if self.selectedIndexpath.contains(indexPath) {
+        if self.img.contains(imagesNames[indexPath.row]) {
             cell.tapUIButton.setImage(UIImage(named: "filledheart"), for: .normal)
         }else{
             cell.tapUIButton.setImage(UIImage(named:"unfilledheart"), for: .normal)
@@ -89,24 +62,14 @@ extension Insta: UITableViewDataSource, UITableViewDelegate {
     }
 
 func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    if self.selectedIndexpath.contains(indexPath){
-        for temp in 0..<name.count{
-            if name[temp] == imagesNames[indexPath.row] {
-                name.remove(at: temp)
-            }
+    if self.img.contains(imagesNames[indexPath.row]){
+        if let index = self.img.index(of: imagesNames[indexPath.row]) {
+            self.img.remove(at: index)
         }
-        for temp in 0..<img.count{
-            if img[temp] == imagesNames[indexPath.row]{
-                img.remove(at: temp)
-            }
-        }
-        self.selectedIndexpath.remove(at: indexPath.row)
-        
+        print(self.img)
     }
     else{
-        img.append(imagesNames[indexPath.row])
-        name.append(imagesNames[indexPath.row])
-        self.selectedIndexpath.append(indexPath)
+        self.img.append(imagesNames[indexPath.row])
     }
     self.instaTableView.reloadData()
 }

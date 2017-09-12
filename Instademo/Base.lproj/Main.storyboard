@@ -94,7 +94,7 @@
                                                     <rect key="frame" x="14" y="40" width="386" height="147"/>
                                                     <color key="backgroundColor" red="1" green="0.34075143800000002" blue="0.45534847690000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cBx-oG-BzS">
+                                                <button opaque="NO" userInteractionEnabled="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cBx-oG-BzS">
                                                     <rect key="frame" x="350" y="137" width="40" height="40"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <inset key="imageEdgeInsets" minX="-8" minY="-17" maxX="-8" maxY="-13"/>
